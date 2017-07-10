@@ -1,0 +1,27 @@
+<h1>Listing url_shortners</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Unique code</th>
+    <th>Clicks</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @url_shortners.each do |url_shortner| %>
+  <tr>
+    <td><%= url_shortner.url %></td>
+    <td><%= url_shortner.unique_code %></td>
+    <td><%= url_shortner.clicks %></td>
+    <td><%= link_to 'Show', url_shortner %></td>
+    <td><%= link_to 'Edit', edit_url_shortner_path(url_shortner) %></td>
+    <td><%= link_to 'Destroy', url_shortner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Url shortner', new_url_shortner_path %>

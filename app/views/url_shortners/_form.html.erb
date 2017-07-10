@@ -1,0 +1,29 @@
+<%= form_for(@url_shortner) do |f| %>
+  <% if @url_shortner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@url_shortner.errors.count, "error") %> prohibited this url_shortner from being saved:</h2>
+
+      <ul>
+      <% @url_shortner.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :unique_code %><br />
+    <%= f.text_field :unique_code %>
+  </div>
+  <div class="field">
+    <%= f.label :clicks %><br />
+    <%= f.number_field :clicks %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

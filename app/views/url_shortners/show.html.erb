@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @url_shortner.url %>
+</p>
+
+<p>
+  <b>Unique code:</b>
+  <%= @url_shortner.unique_code %>
+</p>
+
+<p>
+  <b>Clicks:</b>
+  <%= @url_shortner.clicks %>
+</p>
+
+
+<%= link_to 'Edit', edit_url_shortner_path(@url_shortner) %> |
+<%= link_to 'Back', url_shortners_path %>
